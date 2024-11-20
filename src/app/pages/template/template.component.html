@@ -1,0 +1,17 @@
+<!-- <ng-template #template let-data>
+  <div class="template"></div>
+</ng-template> -->
+
+<div class="control-section">
+  <ejs-grid #grid [dataSource]='data'>
+    <e-columns>
+      <e-column field='OrderID' headerText='OrderID' width='100'></e-column>
+      <e-column field='CustomerID' headerText='CustomerIDxxx' width='100'></e-column>
+      <e-column field='ShipCountry' headerText='ShipCountry' width='100'>
+        <ng-template #template let-data>
+          <div class="template"></div>
+        </ng-template>
+      </e-column>
+    </e-columns>
+  </ejs-grid>
+</div>

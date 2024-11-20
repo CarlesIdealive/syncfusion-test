@@ -1,0 +1,31 @@
+<!-- <ejs-grid [dataSource]='data'>
+  <e-columns>
+    <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=90></e-column>
+    <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
+    <e-column field='Freight' headerText='Freight' textAlign='Right' format='C2' width=90></e-column>
+    <e-column field='OrderDate' headerText='Order Date' textAlign='Right' format='yMd' width=120></e-column>
+  </e-columns>
+</ejs-grid> -->
+
+<ejs-grid [dataSource]="data"
+        [allowPaging]="true" [pageSettings]="pageSettings"
+        [allowSorting]="true"
+        [allowFiltering]="true"
+        [allowGrouping]="true"
+        [allowPdfExport]="true"
+      >
+  <e-columns>
+    <e-column field="OrderID" headerText="Order" width="90" ></e-column>
+    <e-column field="CustomerID" headerText="Customer"></e-column>
+    <e-column field="EmployeeID" headerText="Employee" ></e-column>
+    <e-column field="OrderDate" headerText="Date of Order"></e-column>
+    <e-column field="ShipName" headerText="Ship Name"></e-column>
+    <e-column field="ShipCity" headerText="Ship City"></e-column>
+    <e-column field="ShipAddress" headerText="Ship Address"></e-column>
+    <e-column field="ShipRegion" headerText="Ship Region"></e-column>
+    <e-column field="ShipPostalCode" headerText="Ship Postal Code"></e-column>
+    <e-column field="ShipCountry" headerText="Ship Country"></e-column>
+    <e-column field="Freight" headerText="Freight"></e-column>
+    <e-column field="Verified" headerText="Verified"></e-column>
+  </e-columns>
+</ejs-grid>
