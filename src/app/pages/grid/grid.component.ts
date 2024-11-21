@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GridModule, PagerModule,
       PageService, PageSettingsModel,
       SortService,
       FilterService,
       GroupService,
       EditService,
-      EditSettings,
       PdfExportService,
+      ToolbarService,
+      EditSettingsModel,
+      ToolbarItems,
 
        } from '@syncfusion/ej2-angular-grids';
+// import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns'
 import { data } from '../../data/datasource';
 
 
@@ -27,21 +30,29 @@ import { data } from '../../data/datasource';
     GroupService,
     EditService,
     PdfExportService,
-
+    ToolbarService,
 
   ],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.css'
 })
 export class GridComponent implements OnInit {
-  public pageSettings: PageSettingsModel = { pageSize: 5 };
+  @ViewChild('Grid') public grid?: GridComponent;
+  public pageSettings: PageSettingsModel = { pageSize: 8 };
+  public editSettings: EditSettingsModel = { allowEditing:true,mode: 'Dialog' };
+  public toolBarItems: ToolbarItems[] = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
   public data?: Object[];
+  public isDataLoading = true;
   ngOnInit(): void {
     this.data = data;
   }
 
 
-
+  load() {
+  //   if (this.isDataLoading) { 
+  //     (this.grid as GridComponent).showSpinner();
+  //   } 
+  }
 
 
 //     OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, OrderDate: new Date(8364186e5),

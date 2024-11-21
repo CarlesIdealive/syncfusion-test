@@ -7,15 +7,19 @@
   </e-columns>
 </ejs-grid> -->
 
-<ejs-grid [dataSource]="data"
+<ejs-grid
+        #Grid (load)='load()' 
+        [dataSource]="data"
         [allowPaging]="true" [pageSettings]="pageSettings"
         [allowSorting]="true"
         [allowFiltering]="true"
         [allowGrouping]="true"
         [allowPdfExport]="true"
+        [editSettings]="editSettings"
+        [toolbar]="toolBarItems"
       >
   <e-columns>
-    <e-column field="OrderID" headerText="Order" width="90" ></e-column>
+    <e-column field="OrderID" isPrimaryKey='true' headerText="Order" width="90" ></e-column>
     <e-column field="CustomerID" headerText="Customer"></e-column>
     <e-column field="EmployeeID" headerText="Employee" ></e-column>
     <e-column field="OrderDate" headerText="Date of Order"></e-column>
